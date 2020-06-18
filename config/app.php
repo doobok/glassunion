@@ -4,6 +4,7 @@ return [
 
     // my ENV settings
     'gacode' => env('GA_CODE', null),
+    'telegramchat' => env('TELEGRAM_CHAT', null),
 
     /*
     |--------------------------------------------------------------------------

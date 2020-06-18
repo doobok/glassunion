@@ -3,8 +3,11 @@
         <div class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle" uk-grid>
             <div class="uk-background-cover" style="background-image: url('/modal.jpg');" uk-height-viewport></div>
             <div class="uk-padding-large">
-                <span class="uk-h1">Почти готово</span>
-                <p>Оставте, пожалуйста, контактный номер телефона и уже через минуту наш менеджер свяжется с Вами</p>
+                <span class="uk-h1" style="color: #2C5186">Почти готово</span>
+                <p></p>              
+
+                <lead-form-phone></lead-form-phone>
+
             </div>
         </div>
     </div>

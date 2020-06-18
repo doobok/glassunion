@@ -1,5 +1,72 @@
 @import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap);@charset "UTF-8";
 
+.bubblingG {
+  text-align: center;
+  width: 78px;
+  height: 49px;
+  margin: auto;
+}
+
+.bubblingG span {
+  display: inline-block;
+  vertical-align: middle;
+  width: 10px;
+  height: 10px;
+  margin: 24px auto;
+  background: black;
+  border-radius: 49px;
+  -webkit-border-radius: 49px;
+  animation: bubblingG 1.5s infinite alternate;
+  -webkit-animation: bubblingG 1.5s infinite alternate;
+}
+
+#bubblingG_1 {
+  animation-delay: 0s;
+  -webkit-animation-delay: 0s;
+}
+
+#bubblingG_2 {
+  animation-delay: 0.45s;
+  -webkit-animation-delay: 0.45s;
+}
+
+#bubblingG_3 {
+  animation-delay: 0.9s;
+  -webkit-animation-delay: 0.9s;
+}
+
+@keyframes bubblingG {
+  0% {
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    transform: translateY(0);
+  }
+
+  100% {
+    width: 23px;
+    height: 23px;
+    background-color: white;
+    transform: translateY(-20px);
+  }
+}
+
+@-webkit-keyframes bubblingG {
+  0% {
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    -webkit-transform: translateY(0);
+  }
+
+  100% {
+    width: 23px;
+    height: 23px;
+    background-color: white;
+    -webkit-transform: translateY(-20px);
+  }
+}
+
 .ms-primary-color {
   color: #2C5186;
 }

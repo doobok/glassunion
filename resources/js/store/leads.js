@@ -12,6 +12,7 @@ export default {
   mutations: {
     SET_SLUG: (state, payload) => {
       state.slug = payload;
+      console.log(state.slug);
     },
   },
   actions: {
@@ -22,7 +23,8 @@ export default {
 
     // отправка лида
     SEND_LEAD : (context, payload) => {
-      return Axios.post('https://medacustika.com.ua/api/v1/lead-push', tempyGen(payload))
+      console.log(payload);
+      return Axios.post('/api/v1/lead-push', tempyGen(payload))
       .then((response) => {
         // какоето действие из состоянием (оставил на будущее)
         // if (response.success === true) {
@@ -31,20 +33,10 @@ export default {
         return response.data
       })
       .catch(error => {
+        console.log(error);
         return error;
       });
-    },
-
-    // отправка имени лида
-    SEND_LEAD_NAME : (context, payload) => {
-      return Axios.post('https://medacustika.com.ua/api/v1/lead-name-set', tempyGen(payload))
-      .then((response) => {
-        return response.data
-      })
-      .catch(error => {
-        return error;
-      });
-    },
+    }
 
   }
 }
@@ -69,7 +61,7 @@ function tempyGen(payload) {
     localStorage.setItem('tempy', parsed);
   };
   // добавляем к данным из формы
-  payload.temp_id = tempy;
+  payload.tempy = tempy;
 
   return payload;
 }

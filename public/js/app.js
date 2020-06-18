@@ -1922,7 +1922,14 @@ __webpack_require__.r(__webpack_exports__);
   props: ['title', 'clases'],
   methods: {
     getForm: function getForm() {
-      this.$store.dispatch('PUSH_SLUG', this.title);
+      // передаем надпись с кнопки в store
+      this.$store.dispatch('PUSH_SLUG', this.title); // вызываем событие GA
+
+      gtag('event', 'pushButton', {
+        'event_category': 'Phone',
+        'event_label': this.title
+      });
+      return true;
     }
   }
 });
@@ -1989,10 +1996,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['sourceid', 'button_title', 'redirect_uri'],
+  // props: ['sourceid', 'button_title', 'redirect_uri'],
   data: function data() {
     return {
       loading: false,
@@ -2011,7 +2027,7 @@ __webpack_require__.r(__webpack_exports__);
       this.loading = true;
       this.$store.dispatch('SEND_LEAD', {
         phone: this.phoneNum,
-        source: this.sourceid
+        slug: this.getSlug
       }).then(function (res) {
         // проверяем наличие служебного сообщения из сервера
         if (res.msg) {
@@ -2023,12 +2039,8 @@ __webpack_require__.r(__webpack_exports__);
           _this.loading = false;
           _this.subformshow = true; // console.log(res);
           // вызываем событие GA
-
-          gtag('event', 'sendPhone', {
-            'event_category': 'getPhone',
-            'event_label': _this.button_title
-          });
-          return true; // в противном случае показываем сообщение об ошибке
+          // gtag('event', 'sendPhone', {'event_category': 'getPhone', 'event_label': this.button_title }); return true;
+          // в противном случае показываем сообщение об ошибке
         } else {
           _this.loading = false;
           _this.formshow = true;
@@ -2042,6 +2054,9 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   computed: {
+    getSlug: function getSlug() {
+      return this.$store.getters.SLUG;
+    },
     phoneNum: function phoneNum() {
       var str = this.phone;
       str = str.replace(/[^0-9.]/g, '');
@@ -17592,14 +17607,7 @@ var render = function() {
       _vm._v(" "),
       _vm.loading ? [_vm._m(0)] : _vm._e(),
       _vm._v(" "),
-      _vm.subformshow
-        ? [
-            _c("lead-form-name", {
-              attrs: { button_title: "Отправить" },
-              on: { gotourl: _vm.nextPage }
-            })
-          ]
-        : _vm._e(),
+      _vm.subformshow ? [_vm._m(1)] : _vm._e(),
       _vm._v(" "),
       _c(
         "div",
@@ -17614,6 +17622,12 @@ var render = function() {
           ]
         },
         [
+          _c("p", [
+            _vm._v(
+              "Оставте, пожалуйста, контактный номер телефона и уже через минуту наш менеджер свяжется с Вами"
+            )
+          ]),
+          _vm._v(" "),
           _c("div", { staticClass: "uk-margin" }, [
             _c("input", {
               directives: [
@@ -17627,7 +17641,7 @@ var render = function() {
               ref: "phone",
               staticClass:
                 "uk-input uk-form-width-medium uk-form-large uk-form-width-large",
-              attrs: { name: "phone", type: "text", placeholder: "+38" },
+              attrs: { type: "text", placeholder: "+38" },
               domProps: { value: _vm.phone },
               on: {
                 blur: function($event) {
@@ -17665,20 +17679,27 @@ var render = function() {
               "button",
               {
                 staticClass:
-                  "uk-button uk-button-default uk-button-large uk-form-width-large",
-                attrs: {
-                  disabled: _vm.$v.$invalid,
-                  type: "button",
-                  name: "button"
-                },
-                on: { click: _vm.send }
+                  "uk-button uk-button-danger uk-button-large uk-form-width-large",
+                attrs: { disabled: _vm.$v.$invalid, type: "button" },
+                on: {
+                  click: function($event) {
+                    return _vm.send()
+                  }
+                }
               },
-              [_vm._v(_vm._s(_vm.button_title))]
+              [
+                _vm.$v.$invalid
+                  ? [_vm._v("\n        Введите номер телефона\n      ")]
+                  : [_vm._v("\n        Отправить\n      ")]
+              ],
+              2
             )
           ]),
           _vm._v(" "),
           _c("p", { staticClass: "uk-text-small uk-text-muted" }, [
-            _vm._v("Ваши данные не будут переданы 3-м лицам")
+            _vm._v(
+              "* можете не волноваться, ваш телефон не будет передан третьим лицам"
+            )
           ])
         ]
       )
@@ -17697,6 +17718,20 @@ var staticRenderFns = [
       _c("span", { attrs: { id: "bubblingG_2" } }),
       _vm._v(" "),
       _c("span", { attrs: { id: "bubblingG_3" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "uk-tile-muted uk-padding-small" }, [
+      _c("p", { staticClass: "uk-h3" }, [_vm._v("Номер телефона отправлен")]),
+      _vm._v(" "),
+      _c("p", { staticClass: "uk-text-meta" }, [
+        _vm._v(
+          "Мы получили номер Вашего телефона. Пожалуйста, оставайтесь на связи. Наш менеджер обычно звонит в течение 3-5 мин."
+        )
+      ])
     ])
   }
 ]
@@ -33148,6 +33183,7 @@ __webpack_require__.r(__webpack_exports__);
   mutations: {
     SET_SLUG: function SET_SLUG(state, payload) {
       state.slug = payload;
+      console.log(state.slug);
     }
   },
   actions: {
@@ -33157,21 +33193,15 @@ __webpack_require__.r(__webpack_exports__);
     },
     // отправка лида
     SEND_LEAD: function SEND_LEAD(context, payload) {
-      return axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('https://medacustika.com.ua/api/v1/lead-push', tempyGen(payload)).then(function (response) {
+      console.log(payload);
+      return axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/api/v1/lead-push', tempyGen(payload)).then(function (response) {
         // какоето действие из состоянием (оставил на будущее)
         // if (response.success === true) {
         //   context.commit('SOME_MUTATOR', response.data);
         // }
         return response.data;
       })["catch"](function (error) {
-        return error;
-      });
-    },
-    // отправка имени лида
-    SEND_LEAD_NAME: function SEND_LEAD_NAME(context, payload) {
-      return axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('https://medacustika.com.ua/api/v1/lead-name-set', tempyGen(payload)).then(function (response) {
-        return response.data;
-      })["catch"](function (error) {
+        console.log(error);
         return error;
       });
     }
@@ -33202,7 +33232,7 @@ function tempyGen(payload) {
 
   ; // добавляем к данным из формы
 
-  payload.temp_id = tempy;
+  payload.tempy = tempy;
   return payload;
 }
 

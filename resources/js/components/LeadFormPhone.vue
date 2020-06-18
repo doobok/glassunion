@@ -14,13 +14,16 @@
       </div>
     </template>
     <template v-if="subformshow">
-      <lead-form-name button_title="Отправить" @gotourl="nextPage"></lead-form-name>
+      <div class="uk-tile-muted uk-padding-small">
+        <p class="uk-h3">Номер телефона отправлен</p>
+        <p class="uk-text-meta">Мы получили номер Вашего телефона. Пожалуйста, оставайтесь на связи. Наш менеджер обычно звонит в течение 3-5 мин.</p>
+      </div>
     </template>
     <div v-show="formshow">
+      <p>Оставте, пожалуйста, контактный номер телефона и уже через минуту наш менеджер свяжется с Вами</p>
       <div class="uk-margin">
           <input v-model="phone"
           ref="phone"
-          name="phone"
           class="uk-input uk-form-width-medium uk-form-large uk-form-width-large"
           type="text"
           placeholder="+38"
@@ -34,12 +37,18 @@
       <div class="uk-margin">
         <button
         :disabled="$v.$invalid"
-        class="uk-button uk-button-default uk-button-large uk-form-width-large"
+        class="uk-button uk-button-danger uk-button-large uk-form-width-large"
         type="button"
-        name="button"
-        @click="send">{{button_title}}</button>
+        @click="send()">
+        <template v-if="$v.$invalid">
+          Введите номер телефона
+        </template>
+        <template v-else>
+          Отправить
+        </template>
+      </button>
       </div>
-      <p class="uk-text-small uk-text-muted">Ваши данные не будут переданы 3-м лицам</p>
+      <p class="uk-text-small uk-text-muted">* можете не волноваться, ваш телефон не будет передан третьим лицам</p>
 
     </div>
   </div>
@@ -50,7 +59,7 @@ import Inputmask from 'inputmask';
 import { required } from "vuelidate/lib/validators";
 
 export default {
-  props: ['sourceid', 'button_title', 'redirect_uri'],
+  // props: ['sourceid', 'button_title', 'redirect_uri'],
   data: function() {
       return {
         loading: false,
@@ -66,7 +75,7 @@ export default {
         this.formshow = false;
         this.loading = true;
 
-        this.$store.dispatch('SEND_LEAD', { phone: this.phoneNum, source: this.sourceid }).then((res) => {
+        this.$store.dispatch('SEND_LEAD', { phone: this.phoneNum, slug: this.getSlug }).then((res) => {
           // проверяем наличие служебного сообщения из сервера
           if (res.msg) {
             this.loading = false;
@@ -81,7 +90,7 @@ export default {
             // console.log(res);
 
             // вызываем событие GA
-            gtag('event', 'sendPhone', {'event_category': 'getPhone', 'event_label': this.button_title }); return true;
+            // gtag('event', 'sendPhone', {'event_category': 'getPhone', 'event_label': this.button_title }); return true;
 
           // в противном случае показываем сообщение об ошибке
           } else {
@@ -100,6 +109,9 @@ export default {
       }
     },
     computed: {
+      getSlug: function() {
+          return this.$store.getters.SLUG;
+        },
       phoneNum: function() {
                 var str = this.phone;
                 str = str.replace(/[^0-9.]/g, '');
