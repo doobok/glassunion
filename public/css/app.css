@@ -1,4 +1,28 @@
-@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap);@charset "UTF-8";
+
+.ms-primary-color {
+  color: #2C5186;
+}
+
+.ms-big-t {
+  font-size: 4rem;
+  font-weight: 600;
+  line-height: 1em;
+}
+
+.ms-big-number {
+  font-size: 2rem;
+  font-weight: 700;
+  border: 1px dashed;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.ms-half-opacity {
+  background: rgba(44, 81, 138, 0.6);
+  border-radius: 10px;
+  padding: 10px;
+}
 
 /*!
  * Font Awesome Free 5.13.0 by @fontawesome - https://fontawesome.com
@@ -6074,9 +6098,9 @@ readers do not read off random characters that represent icons */
 
 html {
   /* 1 */
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 16px;
-  font-weight: normal;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
   line-height: 1.5;
   /* 2 */
   -webkit-text-size-adjust: 100%;
@@ -6358,7 +6382,7 @@ h6,
 .uk-heading-xlarge,
 .uk-heading-2xlarge {
   margin: 0 0 20px 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Open Sans", sans-serif;
   font-weight: normal;
   color: #333;
   text-transform: none;
@@ -6404,7 +6428,7 @@ h2,
 
 h3,
 .uk-h3 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   line-height: 1.4;
 }
 
@@ -6416,7 +6440,7 @@ h4,
 
 h5,
 .uk-h5 {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.4;
 }
 
@@ -6687,7 +6711,7 @@ a.uk-link-heading:hover,
 .uk-link-heading a:hover,
 .uk-link-toggle:hover .uk-link-heading,
 .uk-link-toggle:focus .uk-link-heading {
-  color: #1e87f0;
+  color: #2C5186;
   text-decoration: none;
 }
 
@@ -6721,7 +6745,7 @@ a.uk-link-reset,
  ========================================================================== */
 
 .uk-heading-small {
-  font-size: 2.6rem;
+  font-size: 2rem;
   line-height: 1.2;
 }
 
@@ -6749,7 +6773,7 @@ a.uk-link-reset,
 
 @media (min-width: 960px) {
   .uk-heading-small {
-    font-size: 3.25rem;
+    font-size: 3rem;
   }
 
   .uk-heading-medium {
@@ -7046,11 +7070,11 @@ a.uk-link-reset,
 }
 
 .uk-list-primary li::marker {
-  color: #1e87f0 !important;
+  color: #2C5186 !important;
 }
 
 .uk-list-secondary li::marker {
-  color: #222 !important;
+  color: #5B5B5B !important;
 }
 
 /* Image bullet modifier
@@ -7943,7 +7967,7 @@ button.uk-icon:not(:disabled) {
   outline: none;
   background-color: #fff;
   color: #666;
-  border-color: #1e87f0;
+  border-color: #2C5186;
 }
 
 /* Disabled */
@@ -8207,7 +8231,7 @@ select.uk-form-width-xsmall {
 .uk-radio:focus,
 .uk-checkbox:focus {
   outline: none;
-  border-color: #1e87f0;
+  border-color: #2C5186;
 }
 
 /*
@@ -8217,7 +8241,7 @@ select.uk-form-width-xsmall {
 .uk-radio:checked,
 .uk-checkbox:checked,
 .uk-checkbox:indeterminate {
-  background-color: #1e87f0;
+  background-color: #2C5186;
   border-color: transparent;
 }
 
@@ -8226,7 +8250,7 @@ select.uk-form-width-xsmall {
 .uk-radio:checked:focus,
 .uk-checkbox:checked:focus,
 .uk-checkbox:indeterminate:focus {
-  background-color: #0e6ecd;
+  background-color: #1f3a60;
 }
 
 /*
@@ -8286,7 +8310,7 @@ select.uk-form-width-xsmall {
   /* 3 */
   padding: 0;
   /* 4 */
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   line-height: 1.4;
 }
 
@@ -8576,7 +8600,7 @@ select.uk-form-width-xsmall {
  */
 
 .uk-button-primary {
-  background-color: #1e87f0;
+  background-color: #2C5186;
   color: #fff;
   border: 1px solid transparent;
 }
@@ -8585,7 +8609,7 @@ select.uk-form-width-xsmall {
 
 .uk-button-primary:hover,
 .uk-button-primary:focus {
-  background-color: #0f7ae5;
+  background-color: #264573;
   color: #fff;
 }
 
@@ -8593,7 +8617,7 @@ select.uk-form-width-xsmall {
 
 .uk-button-primary:active,
 .uk-button-primary.uk-active {
-  background-color: #0e6ecd;
+  background-color: #1f3a60;
   color: #fff;
 }
 
@@ -8602,7 +8626,7 @@ select.uk-form-width-xsmall {
  */
 
 .uk-button-secondary {
-  background-color: #222;
+  background-color: #5B5B5B;
   color: #fff;
   border: 1px solid transparent;
 }
@@ -8611,7 +8635,7 @@ select.uk-form-width-xsmall {
 
 .uk-button-secondary:hover,
 .uk-button-secondary:focus {
-  background-color: #151515;
+  background-color: #4e4e4e;
   color: #fff;
 }
 
@@ -8619,7 +8643,7 @@ select.uk-form-width-xsmall {
 
 .uk-button-secondary:active,
 .uk-button-secondary.uk-active {
-  background-color: #090909;
+  background-color: #424242;
   color: #fff;
 }
 
@@ -8628,7 +8652,7 @@ select.uk-form-width-xsmall {
  */
 
 .uk-button-danger {
-  background-color: #f0506e;
+  background-color: #34b0c8;
   color: #fff;
   border: 1px solid transparent;
 }
@@ -8637,7 +8661,7 @@ select.uk-form-width-xsmall {
 
 .uk-button-danger:hover,
 .uk-button-danger:focus {
-  background-color: #ee395b;
+  background-color: #2f9eb4;
   color: #fff;
 }
 
@@ -8645,7 +8669,7 @@ select.uk-form-width-xsmall {
 
 .uk-button-danger:active,
 .uk-button-danger.uk-active {
-  background-color: #ec2147;
+  background-color: #298ca0;
   color: #fff;
 }
 
@@ -8673,9 +8697,9 @@ select.uk-form-width-xsmall {
 }
 
 .uk-button-large {
-  padding: 0 40px;
+  padding: 0 4px;
   line-height: 53px;
-  font-size: 0.875rem;
+  font-size: 1.1rem;
 }
 
 /* Text modifiers
@@ -8918,7 +8942,7 @@ select.uk-form-width-xsmall {
  */
 
 .uk-section-primary {
-  background: #1e87f0;
+  background: #2C5186;
 }
 
 /*
@@ -8926,7 +8950,7 @@ select.uk-form-width-xsmall {
  */
 
 .uk-section-secondary {
-  background: #222;
+  background: #5B5B5B;
 }
 
 /* Overlap modifier
@@ -9737,7 +9761,7 @@ select.uk-form-width-xsmall {
  */
 
 .uk-tile-primary {
-  background: #1e87f0;
+  background: #2C5186;
 }
 
 /*
@@ -9745,7 +9769,7 @@ select.uk-form-width-xsmall {
  */
 
 .uk-tile-secondary {
-  background: #222;
+  background: #5B5B5B;
 }
 
 /* ========================================================================
@@ -9814,7 +9838,7 @@ select.uk-form-width-xsmall {
  ========================================================================== */
 
 .uk-card-title {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   line-height: 1.4;
 }
 
@@ -9880,7 +9904,7 @@ select.uk-form-width-xsmall {
  */
 
 .uk-card-primary {
-  background: #1e87f0;
+  background: #2C5186;
   color: #fff;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
@@ -9890,7 +9914,7 @@ select.uk-form-width-xsmall {
 }
 
 .uk-card-primary.uk-card-hover:hover {
-  background-color: #1e87f0;
+  background-color: #2C5186;
   box-shadow: 0 14px 25px rgba(0, 0, 0, 0.16);
 }
 
@@ -9899,7 +9923,7 @@ select.uk-form-width-xsmall {
  */
 
 .uk-card-secondary {
-  background: #222;
+  background: #5B5B5B;
   color: #fff;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
@@ -9909,7 +9933,7 @@ select.uk-form-width-xsmall {
 }
 
 .uk-card-secondary.uk-card-hover:hover {
-  background-color: #222;
+  background-color: #5B5B5B;
   box-shadow: 0 14px 25px rgba(0, 0, 0, 0.16);
 }
 
@@ -10198,7 +10222,7 @@ select.uk-form-width-xsmall {
 
 .uk-marker {
   padding: 5px;
-  background: #222;
+  background: #5B5B5B;
   color: #fff;
   border-radius: 500px;
 }
@@ -10275,8 +10299,8 @@ select.uk-form-width-xsmall {
  */
 
 .uk-alert-primary {
-  background: #d8eafc;
-  color: #1e87f0;
+  background: #c1ccdb;
+  color: #2C5186;
 }
 
 /*
@@ -10293,8 +10317,8 @@ select.uk-form-width-xsmall {
  */
 
 .uk-alert-warning {
-  background: #fef5ee;
-  color: #faa05a;
+  background: #fef0cc;
+  color: #FBBC19;
 }
 
 /*
@@ -10346,7 +10370,7 @@ select.uk-form-width-xsmall {
   border-radius: 500px;
   vertical-align: middle;
   /* 1 */
-  background: #1e87f0;
+  background: #2C5186;
   color: #fff;
   font-size: 0.875rem;
   /* 2 */
@@ -10373,7 +10397,7 @@ select.uk-form-width-xsmall {
 .uk-label {
   display: inline-block;
   padding: 0 10px;
-  background: #1e87f0;
+  background: #2C5186;
   line-height: 1.5;
   font-size: 0.875rem;
   color: #fff;
@@ -10400,7 +10424,7 @@ select.uk-form-width-xsmall {
  */
 
 .uk-label-warning {
-  background-color: #faa05a;
+  background-color: #FBBC19;
   color: #fff;
 }
 
@@ -10448,7 +10472,7 @@ select.uk-form-width-xsmall {
  */
 
 .uk-overlay-primary {
-  background: rgba(34, 34, 34, 0.8);
+  background: rgba(91, 91, 91, 0.8);
 }
 
 /* ========================================================================
@@ -10812,7 +10836,7 @@ select.uk-form-width-xsmall {
 .uk-search-navbar .uk-search-input {
   height: 40px;
   background: transparent;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 /*
@@ -11054,7 +11078,7 @@ ul.uk-nav-sub {
  */
 
 .uk-nav-primary > li > a {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   line-height: 1.5;
   color: #999;
 }
@@ -11728,7 +11752,7 @@ ul.uk-nav-sub {
 /* Active */
 
 .uk-subnav-pill > .uk-active > a {
-  background-color: #1e87f0;
+  background-color: #2C5186;
   color: #fff;
 }
 
@@ -11957,7 +11981,7 @@ ul.uk-nav-sub {
 
 .uk-tab > .uk-active > a {
   color: #333;
-  border-color: #1e87f0;
+  border-color: #2C5186;
 }
 
 /* Disabled */
@@ -13200,7 +13224,7 @@ ul.uk-nav-sub {
   box-sizing: border-box;
   width: 270px;
   padding: 20px 20px;
-  background: #222;
+  background: #5B5B5B;
   /* 3 */
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
@@ -13677,7 +13701,7 @@ ul.uk-nav-sub {
  */
 
 .uk-notification-message-primary {
-  color: #1e87f0;
+  color: #2C5186;
 }
 
 /*
@@ -13693,7 +13717,7 @@ ul.uk-nav-sub {
  */
 
 .uk-notification-message-warning {
-  color: #faa05a;
+  color: #FBBC19;
 }
 
 /*
@@ -13857,17 +13881,17 @@ ul.uk-nav-sub {
  */
 
 .uk-progress::-webkit-progress-value {
-  background-color: #1e87f0;
+  background-color: #2C5186;
   -webkit-transition: width 0.6s ease;
   transition: width 0.6s ease;
 }
 
 .uk-progress::-moz-progress-bar {
-  background-color: #1e87f0;
+  background-color: #2C5186;
 }
 
 .uk-progress::-ms-fill {
-  background-color: #1e87f0;
+  background-color: #2C5186;
   -ms-transition: width 0.6s ease;
   transition: width 0.6s ease;
   /* 1 */
@@ -15506,7 +15530,7 @@ ul.uk-nav-sub {
  ========================================================================== */
 
 .uk-text-lead {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   line-height: 1.5;
   color: #333;
 }
@@ -15535,7 +15559,7 @@ ul.uk-nav-sub {
 }
 
 .uk-text-large {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   line-height: 1.5;
 }
 
@@ -15596,11 +15620,11 @@ ul.uk-nav-sub {
 }
 
 .uk-text-primary {
-  color: #1e87f0 !important;
+  color: #2C5186 !important;
 }
 
 .uk-text-secondary {
-  color: #222 !important;
+  color: #5B5B5B !important;
 }
 
 .uk-text-success {
@@ -15608,7 +15632,7 @@ ul.uk-nav-sub {
 }
 
 .uk-text-warning {
-  color: #faa05a !important;
+  color: #FBBC19 !important;
 }
 
 .uk-text-danger {
@@ -15631,12 +15655,12 @@ ul.uk-nav-sub {
   /* 2 */
   display: inline-block;
   /* 3 */
-  color: #1e87f0 !important;
+  color: #2C5186 !important;
 }
 
 @supports (-webkit-background-clip: text) {
   .uk-text-background {
-    background-color: #1e87f0;
+    background-color: #2C5186;
     color: transparent !important;
   }
 }
@@ -16059,11 +16083,11 @@ iframe.uk-cover {
 }
 
 .uk-background-primary {
-  background-color: #1e87f0;
+  background-color: #2C5186;
 }
 
 .uk-background-secondary {
-  background-color: #222;
+  background-color: #5B5B5B;
 }
 
 /* Size
@@ -16760,7 +16784,7 @@ iframe.uk-cover {
  */
 
 .uk-logo {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   color: #666;
   /* 1 */
