@@ -10,10 +10,13 @@
 
 
       </div>
-      <div class="uk-navbar-right uk-visible@s">
+      <div class="uk-navbar-right">
 
         <a href="tel:+380665229066" class="uk-link-reset uk-text-large">
-          +38 (066) 522-90-66
+        <i class="fas fa-phone-alt"></i>
+          <span class="uk-visible@s">
+            +38 (066) 522-90-66
+          </span>
         </a>
 
       </div>
