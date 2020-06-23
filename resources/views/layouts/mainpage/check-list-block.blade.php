@@ -27,7 +27,7 @@
         <span class="uk-h3">Окна надежно закреплены</span>
       </span>
       <i class="far fa-check-square uk-float-right uk-text-large uk-visible@s"></i>
-      <p>При открывании створки не должно ощущатся движения рамного профиля, створки не должны двигатся вниз</p>
+      <p>При открывании створки не должно ощущаться движения рамного профиля, створки не должны двигаться вниз</p>
     </div>
     <div class="uk-margin-small-bottom">
       <span class="uk-padding-small">
@@ -54,7 +54,7 @@
     <div class="uk-text-center uk-margin-large">
 
       <button-component
-      title="Заказать проффесиональную установку"
+      title="Заказать профессиональную установку"
       {{-- clases="uk-width-1-1 uk-width-3-4@s uk-width-2-3@m uk-width-3-5@l" --}}
       ></button-component>
 

@@ -8,14 +8,14 @@
           </div>
           <div>
               <h1 class="uk-heading-medium">Окна <span style="color: #2C5186">Glassunion</span></h1>
-              <span class="uk-heading-small"><mark>выбор всегда в цель</mark></span>
+              <span class="uk-heading-small"><mark>сохраним тепло в доме</mark></span>
               <p class="uk-text-large" style="font-weight: 700;">Заказав наши окна вы получаете:</p>
               <div class="ms-half-opacity uk-light">
                 <ul class="uk-list uk-list-bullet uk-margin-small-top" style="font-weight: 500;">
-                  <li>качественные окна и фурнитуру, сертифицированные в Европе и Украине</li>
+                  <li>качественные окна, двери и фурнитуру</li>
                   <li>бесплатный замер</li>
-                  <li>бесплатную установку окон</li>
                   <li>гарантию 3 года</li>
+                  <li>сертифицированную в странах Европы и Украине продукцию</li>
                 </ul>
               </div>
               <div class="uk-text-center uk-margin-medium-top">
