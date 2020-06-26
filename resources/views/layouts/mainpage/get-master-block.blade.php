@@ -6,15 +6,15 @@
         <img data-src="/engineer.png" width="300" height="250" alt="замерщик окон" uk-img>
       </div>
       <div class="uk-width-expand">
-        <h2 class="uk-heading-small uk-margin-medium-bottom">Замерщик на пороге через 1 час</h2>
-        <p>Приедем в течение часа, или в любое удобное для вас время с 10.00 до 19.00 по адресу в пределах Бучи, Ирпеня или Ворзеля</p>
+        <h2 class="uk-heading-small uk-margin-medium-bottom" uk-scrollspy="cls: uk-animation-fade">Замерщик на пороге через 1 час</h2>
+        <p uk-scrollspy="cls: uk-animation-fade; delay: 100">Приедем в течение часа, или в любое удобное для вас время с 10.00 до 19.00 по адресу в пределах Бучи, Ирпеня или Ворзеля</p>
 
-        <div class="uk-text-center uk-margin-medium-top">
+        <div class="uk-text-center uk-margin-medium-top" uk-scrollspy="cls: uk-animation-fade; delay: 500">
 
-        <button-component
-        title="Вызвать замерщика бесплатно"
-        clases="uk-width-1-1 uk-width-2-3@s"
-        ></button-component>
+          <button-component
+          title="Вызвать замерщика бесплатно"
+          clases="uk-width-1-1 uk-width-2-3@s"
+          ></button-component>
 
         </div>
       </div>

@@ -1,9 +1,9 @@
 <section class="uk-section uk-section-primary uk-section-muted">
   <div class="uk-container uk-container-large">
-    <h2 class="uk-heading-small uk-text-center uk-margin-medium-bottom">5 признаков качественной установки окон</h2>
-    <p class="uk-text-lead">Помните, качество монтажа на 70% определяет долговечность конструкции, ее тепло- и звукоизоляционные свойства. Даже самая идеальная конструкция при неправильной установке станет источником больших неприятностей. Держите чек-лист из 5 пунктов, чтобы знать на что ориентироваться при оценке качества исполнения работ по подбору и установке окон.</p>
+    <h2 class="uk-heading-small uk-text-center uk-margin-medium-bottom" uk-scrollspy="cls: uk-animation-fade">5 признаков качественной установки окон</h2>
+    <p class="uk-text-lead" uk-scrollspy="cls: uk-animation-fade; delay: 100">Помните, качество монтажа на 70% определяет долговечность конструкции, ее тепло- и звукоизоляционные свойства. Даже самая идеальная конструкция при неправильной установке станет источником больших неприятностей. Держите чек-лист из 5 пунктов, чтобы знать на что ориентироваться при оценке качества исполнения работ по подбору и установке окон.</p>
   </div>
-  <div class="uk-container uk-container-small uk-margin-medium-top uk-margin-medium-bottom">
+  <div class="uk-container uk-container-small uk-margin-medium-top uk-margin-medium-bottom" uk-scrollspy="target: > div; cls: uk-animation-fade; delay: 200">
 
     <div class="uk-margin-small-bottom">
       <span class="uk-padding-small">
@@ -48,7 +48,7 @@
 
   </div>
 
-  <div class="uk-container uk-container-large">
+  <div class="uk-container uk-container-large" uk-scrollspy="cls: uk-animation-fade; delay: 100">
     <p>* К сожалению, визуально, по горячим следам оценить качество установки оконной конструкции не всегда возможно. И проблемы могут проявить себя значительно позже. Поэтому советуем доверять установку окон исключительно профессионалам.</p>
 
     <div class="uk-text-center uk-margin-large">

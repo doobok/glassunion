@@ -1,12 +1,12 @@
 <section class="uk-section uk-section-secondary uk-section-muted">
   <div class="uk-container uk-container-large">
-    <h2 class="uk-heading-small uk-text-center uk-margin-medium-bottom">7 частых ошибок при установке окон</h2>
-    <p class="uk-text-lead">Часто выбирая окна и подрядчика по установке, клиент даже не подозревает о "подводных камнях" с которыми может столкнутся как непосредственно во время, так и через определенное время после их установки. Предлагаем Вам ознакомиться из самыми частыми:</p>
+    <h2 class="uk-heading-small uk-text-center uk-margin-medium-bottom" uk-scrollspy="cls: uk-animation-fade">7 частых ошибок при установке окон</h2>
+    <p class="uk-text-lead" uk-scrollspy="cls: uk-animation-fade; delay: 100">Часто выбирая окна и подрядчика по установке, клиент даже не подозревает о "подводных камнях" с которыми может столкнутся как непосредственно во время, так и через определенное время после их установки. Предлагаем Вам ознакомиться из самыми частыми:</p>
   </div>
   <div class="uk-container uk-container-small uk-margin-medium-top">
 
 
-    <ul uk-accordion>
+    <ul uk-accordion uk-scrollspy="target: > li; cls: uk-animation-fade; delay: 200">
         <li class="uk-open">
             <a class="uk-accordion-title uk-padding-small" href="#">
               <span class="ms-big-number">1.</span>

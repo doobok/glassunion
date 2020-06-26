@@ -37,7 +37,7 @@
       <div class="uk-margin">
         <button
         :disabled="$v.$invalid"
-        class="uk-button uk-button-danger uk-button-large uk-form-width-large"
+        class="uk-button uk-button-danger uk-button-large uk-width-medium uk-text-truncate"
         type="button"
         @click="send()">
         <template v-if="$v.$invalid">

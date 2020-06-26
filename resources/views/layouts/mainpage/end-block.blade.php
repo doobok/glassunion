@@ -5,9 +5,9 @@
       <div class="uk-width-expand">
         <div class="uk-flex uk-flex-column uk-flex-center uk-flex-middle">
           <div>
-            <h2 class="uk-heading-small uk-margin-medium-bottom">Окна Glassunion</h2>
+            <h2 class="uk-heading-small uk-margin-medium-bottom" uk-scrollspy="cls: uk-animation-fade">Окна Glassunion</h2>
           </div>
-          <div>
+          <div uk-scrollspy="cls: uk-animation-fade; delay: 100">
             <ul class="uk-list uk-list-bullet">
               <li>окна любой сложности</li>
               <li>бесплатный замер окон</li>
@@ -17,7 +17,7 @@
           </div>
         </div>
 
-        <div class="uk-text-center uk-margin-medium-top">
+        <div class="uk-text-center uk-margin-medium-top" uk-scrollspy="cls: uk-animation-fade; delay: 200">
 
           <button-component
           title="Заказать окна"
@@ -26,7 +26,7 @@
 
         </div>
       </div>
-      <div class="uk-width-1-2@m uk-text-center">
+      <div class="uk-width-1-2@m uk-text-center" uk-scrollspy="cls: uk-animation-slide-right-medium; delay: 100">
         <img data-src="/end-block.jpg" alt="окна Glassunion" uk-img>
       </div>
 

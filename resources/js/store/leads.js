@@ -12,7 +12,7 @@ export default {
   mutations: {
     SET_SLUG: (state, payload) => {
       state.slug = payload;
-      console.log(state.slug);
+      // console.log(state.slug);
     },
   },
   actions: {
@@ -33,7 +33,7 @@ export default {
         return response.data
       })
       .catch(error => {
-        console.log(error);
+        // console.log(error);
         return error;
       });
     }
