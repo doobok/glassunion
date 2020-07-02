@@ -59,7 +59,6 @@ import Inputmask from 'inputmask';
 import { required } from "vuelidate/lib/validators";
 
 export default {
-  // props: ['sourceid', 'button_title', 'redirect_uri'],
   data: function() {
       return {
         loading: false,
@@ -90,7 +89,9 @@ export default {
             // console.log(res);
 
             // вызываем событие GA
-            // gtag('event', 'sendPhone', {'event_category': 'getPhone', 'event_label': this.button_title }); return true;
+            gtag('event', 'sendPhone', {'event_category': 'getPhone', 'event_label': this.getSlug });
+            // передаем путь для воронки
+            gtag('config', 'UA-30077483-16', {'page_path': '/send-form'});
 
           // в противном случае показываем сообщение об ошибке
           } else {
@@ -103,10 +104,6 @@ export default {
         })
 
       },
-      nextPage() {
-        window.location.href= this.redirect_uri;
-
-      }
     },
     computed: {
       getSlug: function() {
