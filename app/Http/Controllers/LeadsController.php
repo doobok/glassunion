@@ -55,7 +55,7 @@ class LeadsController extends Controller
         $phone = '+38' . $request->phone;
         $slug = $request->slug;
         //telegram notification
-        // Notification::send('', new TelegramNewLead($slug, $phone));
+        Notification::send('', new TelegramNewLead($slug, $phone));
 
       return response()->json(['success' => 'true']);
   }
